@@ -42,6 +42,12 @@ io.on("connection", (socket) => {
         console.log("❌ User disconnected:", socket.id);
     });
 });
+import authRoutes from "./routes/auth.js";
+import chatRoutes from "./routes/chat.js";
+
+app.use("/auth", authRoutes);
+app.use("/chat", chatRoutes);
+
 
 // Start server
 const PORT = process.env.PORT || 5000;
